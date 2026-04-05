@@ -1,0 +1,1 @@
+python3 -c "import linearmodels.panel; print(dir(linearmodels.panel))"

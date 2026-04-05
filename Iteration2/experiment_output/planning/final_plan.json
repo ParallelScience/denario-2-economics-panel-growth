@@ -1,0 +1,42 @@
+{
+    "sub_tasks": [
+        {
+            "bullet_points": [
+                "Load the dataset and perform log-transformations on all level variables (gdp_per_capita, capital_stock, labor_force, human_capital, tfp).",
+                "Conduct Levin-Lin-Chu (LLC) unit root tests on the transformed series to assess stationarity.",
+                "Standardize and mean-center the policy variables (trade_openness, government_expenditure_share).",
+                "Save the cleaned, log-transformed, and standardized dataset as processed_panel.csv in the workspace for use in subsequent steps.",
+                "Implement the System GMM estimator to model the investment rate as a function of lagged investment, GDP per capita, and policy variables.",
+                "Perform diagnostic tests (Arellano-Bond AR(2), Hansen J-test, Kleibergen-Paap F-statistic) to validate the GMM specification.",
+                "Save the estimated coefficients and diagnostic statistics to a results file."
+            ],
+            "sub_task": "Data Pre-processing, Stationarity Diagnostics, and System GMM Estimation",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Load the processed_panel.csv file generated in Step 1.",
+                "Estimate the production function parameters and the depreciation rate (δ) using a constrained optimization framework.",
+                "Perform a sensitivity analysis on the δ estimation by calculating and reporting standard errors or confidence intervals to quantify parameter uncertainty.",
+                "Calculate the target steady-state capital stock (K*) for each country-year observation based on the predicted investment rate from Step 1 and the estimated δ.",
+                "Compute the \"distance to steady-state\" metric (Di,t).",
+                "Estimate the moderated transition model using the instrumented interaction terms between Di,t and policy variables.",
+                "Generate a multi-panel plot showing the marginal effect of the distance to steady-state on capital growth at different percentiles of policy variables.",
+                "Save the final model outputs, sensitivity analysis results, and the plot to the workspace."
+            ],
+            "sub_task": "Structural Parameter Estimation and Transition Gap Analysis",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Review the diagnostic statistics, structural parameter estimates, and sensitivity analysis results generated in the previous steps.",
+                "Compare the estimated capital elasticity from the production function against the theoretical benchmark of 0.35, discussing deviations as potential evidence of measurement noise or model misspecification.",
+                "Interpret the elasticity of the investment rate with respect to GDP per capita and the role of policy variables as moderators of transition speed.",
+                "Discuss the implications of the findings regarding the structural feedback loop between income levels and capital accumulation.",
+                "Synthesize the results into a comprehensive report, referencing the key statistics and plots to support the conclusions on how institutional factors influence growth trajectories."
+            ],
+            "sub_task": "Synthesis and Results Interpretation",
+            "sub_task_agent": "researcher"
+        }
+    ]
+}
