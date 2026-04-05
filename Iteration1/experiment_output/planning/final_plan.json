@@ -1,0 +1,40 @@
+{
+    "sub_tasks": [
+        {
+            "bullet_points": [
+                "Load the dataset and generate a descriptive statistics table (mean, std, min, max) for all variables before transformation.",
+                "Perform visual correlation analysis between `gdp_per_capita` and `investment_rate` and save the plot.",
+                "Apply natural log transformations to `gdp_per_capita`, `capital_stock`, `labor_force`, `human_capital`, and `tfp`.",
+                "Standardize and mean-center `trade_openness` and `government_expenditure_share`.",
+                "Conduct Levin-Lin-Chu unit root tests on the log-transformed variables.",
+                "Run OLS and Fixed Effects regressions for the investment function: $\\ln(s_{i,t}) = \\gamma_0 + \\gamma_1 \\ln(Y/L)_{i,t} + \\gamma_2 \\text{Policy}_{i,t} + \\mu_i + \\epsilon_{i,t}$.",
+                "Save regression summary tables and diagnostic plots, ensuring clear filenames are printed to the console."
+            ],
+            "sub_task": "Perform initial data cleaning, descriptive analysis, log-transformations, and stationarity checks. Estimate the baseline investment elasticity using Fixed Effects and OLS to establish the endogeneity benchmark.",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Estimate the investment function using System GMM, using appropriate lags as instruments.",
+                "Perform Hansen J-tests and AR(2) tests to validate the GMM specification.",
+                "Estimate the production function $\\ln(Y/L) = \\beta_0 + \\alpha \\ln(K/L) + \\beta_H \\ln(H) + \\ln(A)$ and the depreciation rate $\\delta$.",
+                "Estimate the interaction model $\\ln(s_{i,t}) = \\gamma_0 + \\gamma_1 \\ln(Y/L)_{i,t} + \\gamma_2 \\text{Policy}_{i,t} + \\gamma_3 (\\ln(Y/L)_{i,t} \\times \\text{Policy}_{i,t}) + \\mu_i + \\epsilon_{i,t}$.",
+                "Calculate VIFs for the interaction model and perform robustness checks (sub-sample analysis).",
+                "Save all regression results (coefficients, standard errors, test statistics) into structured CSV/JSON files in the output directory and print the filenames to the console."
+            ],
+            "sub_task": "Implement System GMM to address endogeneity, recover structural production parameters, and test policy moderation effects.",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Interpret the estimated investment elasticity and the impact of endogeneity on the results.",
+                "Explicitly compare the empirical findings (recovered $\\alpha$ and $\\delta$) against the structural model's known parameters (0.35 and 0.07) to evaluate model performance under synthetic noise.",
+                "Analyze the role of `trade_openness` and `government_expenditure_share` as moderators of capital deepening.",
+                "Summarize the robustness of the findings based on the diagnostic tests (Hansen, AR(2), VIF).",
+                "Provide a final conclusion on the structural feedback loop and policy implications for growth dynamics."
+            ],
+            "sub_task": "Synthesize all quantitative findings into a comprehensive research report.",
+            "sub_task_agent": "researcher"
+        }
+    ]
+}

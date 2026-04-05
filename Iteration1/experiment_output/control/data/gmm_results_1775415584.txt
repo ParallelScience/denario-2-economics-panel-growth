@@ -1,0 +1,81 @@
+                          IV-2SLS Estimation Summary                          
+==============================================================================
+Dep. Variable:        investment_rate   R-squared:                      0.4479
+Estimator:                    IV-2SLS   Adj. R-squared:                 0.4467
+No. Observations:                1450   F-statistic:                    112.75
+Date:                Sun, Apr 05 2026   P-value (F-stat)                0.0000
+Time:                        18:59:44   Distribution:                  chi2(3)
+Cov. Estimator:             clustered                                         
+                                                                              
+                                        Parameter Estimates                                         
+====================================================================================================
+                                  Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+----------------------------------------------------------------------------------------------------
+trade_openness_std                   0.0142     0.0389     0.3652     0.7150     -0.0620      0.0904
+government_expenditure_share_std     0.0237     0.0506     0.4675     0.6402     -0.0755      0.1228
+ln_gdp_per_capita                   -0.6035     0.0605    -9.9839     0.0000     -0.7220     -0.4851
+====================================================================================================
+
+Endogenous: ln_gdp_per_capita
+Instruments: ln_gdp_per_capita_lag1
+Clustered Covariance (One-Way)
+Debiased: False
+Num Clusters: 50
+
+Production Function:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 ln_y_l   R-squared:                       0.731
+Model:                            OLS   Adj. R-squared:                  0.731
+Method:                 Least Squares   F-statistic:                     1356.
+Date:                Sun, 05 Apr 2026   Prob (F-statistic):               0.00
+Time:                        18:59:44   Log-Likelihood:                -1872.1
+No. Observations:                1500   AIC:                             3752.
+Df Residuals:                    1496   BIC:                             3773.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const               -4.9256      0.084    -58.326      0.000      -5.091      -4.760
+ln_k_l               0.3535      0.022     16.421      0.000       0.311       0.396
+ln_human_capital     0.3970      0.054      7.395      0.000       0.292       0.502
+ln_tfp               0.8768      0.039     22.604      0.000       0.801       0.953
+==============================================================================
+Omnibus:                       72.521   Durbin-Watson:                   0.083
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               29.582
+Skew:                           0.016   Prob(JB):                     3.77e-07
+Kurtosis:                       2.313   Cond. No.                         11.6
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Interaction Model:
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        investment_rate   R-squared:                       0.062
+Model:                            OLS   Adj. R-squared:                  0.060
+Method:                 Least Squares   F-statistic:                     32.84
+Date:                Sun, 05 Apr 2026   Prob (F-statistic):           1.49e-20
+Time:                        18:59:44   Log-Likelihood:                 70.302
+No. Observations:                1500   AIC:                            -132.6
+Df Residuals:                    1496   BIC:                            -111.4
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+const                 -2.0016      0.008   -245.738      0.000      -2.018      -1.986
+ln_gdp_per_capita      0.0386      0.004      9.849      0.000       0.031       0.046
+trade_openness_std     0.0007      0.008      0.090      0.928      -0.015       0.017
+interaction            0.0025      0.004      0.635      0.525      -0.005       0.010
+==============================================================================
+Omnibus:                      164.222   Durbin-Watson:                   1.866
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              266.886
+Skew:                          -0.759   Prob(JB):                     1.11e-58
+Kurtosis:                       4.403   Cond. No.                         3.25
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

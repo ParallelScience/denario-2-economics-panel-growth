@@ -1,0 +1,34 @@
+                          PanelOLS Estimation Summary                           
+================================================================================
+Dep. Variable:        investment_rate   R-squared:                        0.0116
+Estimator:                   PanelOLS   R-squared (Between):              0.4049
+No. Observations:                1500   R-squared (Within):               0.0116
+Date:                Sun, Apr 05 2026   R-squared (Overall):              0.0615
+Time:                        18:58:16   Log-likelihood                    132.97
+Cov. Estimator:            Unadjusted                                           
+                                        F-statistic:                      5.6540
+Entities:                          50   P-value                           0.0008
+Avg Obs:                       30.000   Distribution:                  F(3,1447)
+Min Obs:                       30.000                                           
+Max Obs:                       30.000   F-statistic (robust):             5.6540
+                                        P-value                           0.0008
+Time periods:                      30   Distribution:                  F(3,1447)
+Avg Obs:                       50.000                                           
+Min Obs:                       50.000                                           
+Max Obs:                       50.000                                           
+                                                                                
+                                        Parameter Estimates                                         
+====================================================================================================
+                                  Parameter  Std. Err.     T-stat    P-value    Lower CI    Upper CI
+----------------------------------------------------------------------------------------------------
+const                               -2.0012     0.0148    -134.97     0.0000     -2.0303     -1.9721
+ln_gdp_per_capita                    0.0384     0.0096     3.9794     0.0001      0.0195      0.0573
+trade_openness_std                   0.0047     0.0059     0.7929     0.4280     -0.0069      0.0164
+government_expenditure_share_std     0.0037     0.0059     0.6159     0.5380     -0.0080      0.0153
+====================================================================================================
+
+F-test for Poolability: 2.5806
+P-value: 0.0000
+Distribution: F(49,1447)
+
+Included effects: Entity

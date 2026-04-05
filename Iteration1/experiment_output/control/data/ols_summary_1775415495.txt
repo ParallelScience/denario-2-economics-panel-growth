@@ -1,0 +1,27 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:        investment_rate   R-squared:                       0.062
+Model:                            OLS   Adj. R-squared:                  0.060
+Method:                 Least Squares   F-statistic:                     32.72
+Date:                Sun, 05 Apr 2026   Prob (F-statistic):           1.76e-20
+Time:                        18:58:16   Log-Likelihood:                 70.133
+No. Observations:                1500   AIC:                            -132.3
+Df Residuals:                    1496   BIC:                            -111.0
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+====================================================================================================
+                                       coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------
+const                               -2.0016      0.008   -245.697      0.000      -2.018      -1.986
+ln_gdp_per_capita                    0.0387      0.004      9.859      0.000       0.031       0.046
+trade_openness_std                   0.0043      0.006      0.723      0.470      -0.007       0.016
+government_expenditure_share_std     0.0015      0.006      0.258      0.797      -0.010       0.013
+==============================================================================
+Omnibus:                      163.330   Durbin-Watson:                   1.866
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              265.357
+Skew:                          -0.755   Prob(JB):                     2.39e-58
+Kurtosis:                       4.401   Cond. No.                         3.18
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
