@@ -1,0 +1,7 @@
+{
+  "primary_category": "econ.EM",
+  "secondary_categories": [
+    "econ.GN"
+  ],
+  "justification": "The paper focuses on developing and applying a dynamic panel framework using System GMM estimators to quantify endogenous growth mechanisms and convergence dynamics, which is a core contribution to macro-econometrics."
+}

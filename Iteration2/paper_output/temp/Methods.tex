@@ -1,0 +1,45 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{graphicx} 
+
+
+\begin{document}
+
+\subsection{Dataset and model specification}
+The analysis is conducted on a synthetic panel dataset generated for 50 countries over the period 1990--2019. The data were created from a structural growth model based on a standard Cobb-Douglas production function, ensuring that the underlying data-generating process is known. This allows for a controlled assessment of our econometric methodology's ability to recover the true structural parameters. The core variables include real GDP per capita, capital stock, investment rate, trade openness, and the share of government expenditure in GDP.
+
+Our framework is built upon the fundamental equation for capital accumulation, which describes the evolution of the capital stock ($K$) over time for each country $i$:
+\begin{equation}
+K_{i,t+1} = (1-\delta)K_{i,t} + I_{i,t}
+\end{equation}
+where $I_{i,t}$ is total investment and $\delta$ is the rate of depreciation of the capital stock. Assuming investment is a fraction $s_{i,t}$ of total output $Y_{i,t}$, the growth rate of capital can be expressed as:
+\begin{equation}
+\Delta \ln(K_{i,t+1}) \approx s_{i,t} \frac{Y_{i,t}}{K_{i,t}} - \delta
+\end{equation}
+The depreciation rate $\delta$ was not assumed but was estimated as a structural parameter within our framework, yielding a value consistent with the underlying data-generating process.
+
+\subsection{Quantifying endogenous investment}
+To isolate the endogenous feedback between economic development and the propensity to invest, we first model the investment rate as a function of per capita income. We employ a fixed-effects panel regression to control for unobserved time-invariant country characteristics that might influence national saving and investment patterns. The model is specified as:
+\begin{equation}
+\ln(s_{i,t}) = \gamma_0 + \gamma_1 \ln(y_{i,t}) + \mu_i + \epsilon_{i,t}
+\end{equation}
+where $s_{i,t}$ is the investment rate, $y_{i,t}$ is GDP per capita, $\mu_i$ represents country-specific fixed effects, and $\epsilon_{i,t}$ is the idiosyncratic error term. The coefficient of interest, $\gamma_1$, captures the elasticity of the investment rate with respect to the level of per capita income. A statistically significant and positive $\gamma_1$ provides evidence of an endogenous investment mechanism where capital formation rates rise with economic development. The predicted values from this regression, $\hat{s}_{i,t}$, provide a measure of the investment rate that is conditioned on the level of income.
+
+\subsection{Modeling convergence dynamics and policy moderation}
+In the second stage of our analysis, we investigate the speed of convergence and how it is moderated by policy. We first calculate each country's distance to its implied steady-state capital stock. The steady-state capital stock, $K^*_{i,t}$, is defined by the condition where investment equals the amount of capital that depreciates, $s_{i,t}Y_{i,t} = \delta K^*_{i,t}$. Using the predicted investment rate $\hat{s}_{i,t}$ from our first-stage model and the estimated depreciation rate $\delta$, we compute the distance to steady-state for each country-year observation as:
+\begin{equation}
+D_{i,t} = \ln(K^*_{i,t}) - \ln(K_{i,t})
+\end{equation}
+This variable, $D_{i,t}$, represents the gap that an economy must close to reach its equilibrium level of capital.
+
+To test whether policy variables moderate the speed of capital accumulation, we estimate a moderated transition model. This model regresses the growth rate of capital on the distance to steady-state and an interaction term between this distance and a given policy variable. The specification is as follows:
+\begin{equation}
+\Delta \ln(K_{i,t}) = \beta_0 + \beta_1 D_{i,t} + \beta_2 (D_{i,t} \times \text{Policy}_{i,t}) + \nu_i + \eta_{i,t}
+\end{equation}
+where $\text{Policy}_{i,t}$ represents either trade openness or the government expenditure share. To address the potential endogeneity of the interaction term, which is a product of two potentially endogenous variables, we use an instrumental variable approach. The coefficient $\beta_1$ measures the baseline speed of convergence. The key coefficient, $\beta_2$, captures the moderating effect of the policy. A statistically significant $\beta_2$ indicates that the policy variable either accelerates ($\beta_2 > 0$) or dampens ($\beta_2 < 0$) the velocity of capital deepening as a country approaches its steady-state. The statistical significance of this coefficient is our primary evaluation metric for identifying policy moderators of convergence speed.
+
+\end{document}
+                

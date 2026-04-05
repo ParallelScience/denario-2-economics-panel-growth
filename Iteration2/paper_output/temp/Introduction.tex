@@ -1,0 +1,20 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{graphicx} 
+
+
+\begin{document}
+
+Understanding the drivers of long-run economic growth and the varying speeds at which countries converge toward higher levels of prosperity remains a central objective in macroeconomics. The process of capital accumulation, governed by the national investment rate, is at the heart of this inquiry. While foundational growth models often treat the investment rate as an exogenous parameter for analytical tractability, this simplification may overlook a crucial feedback mechanism: as economies develop and income rises, their capacity and propensity to save and invest can also increase, creating a self-reinforcing cycle of growth. This potential endogeneity of the investment rate poses a significant challenge for empirical analysis.
+
+A primary difficulty in growth econometrics is distinguishing between factors that determine an economy's long-run equilibrium level of income and those that influence the speed of transition toward that equilibrium. For example, a policy like trade openness might foster growth by raising the steady-state capital stock, perhaps by increasing the investment rate, or it could enhance allocative efficiency, thereby accelerating the rate at which an economy closes the gap to its existing potential. Conventional growth regressions often struggle to disentangle these distinct causal channels, conflating level effects with speed effects and potentially leading to ambiguous interpretations of how income and policy shape the growth process.
+
+This paper develops and applies an empirical framework designed to explicitly separate these two mechanisms: the endogenous determinants of the investment rate and the policy-related moderators of convergence speed. To validate our methodology, we utilize a synthetic panel dataset generated from a structural growth model with known parameters. This approach allows us to assess the ability of our econometric techniques to recover the true underlying relationships in a controlled environment. Our analysis proceeds in two stages. First, we address the endogeneity of investment by modeling the investment rate as a dynamic function of its own lag and the level of per capita income. Using a System Generalized Method of Moments (GMM) estimator, we quantify the elasticity of investment with respect to income, thereby capturing the structural feedback between economic development and capital formation.
+
+In the second stage, we use the estimated investment function to analyze the dynamics of capital accumulation. We calculate each country's distance to its implied steady-state capital stock, defined as $D_{i,t} = \ln(K^*_{i,t}) - \ln(K_{i,t})$, and model the rate of capital growth as a function of this convergence gap. The key innovation here is the introduction of interaction terms between the convergence gap and key policy variables, such as trade openness and the government expenditure share. We estimate a moderated transition model of the form $\Delta \ln(K_{i,t}) = \beta_0 + \beta_1 D_{i,t} + \beta_2 (D_{i,t} \times \text{Policy}_{i,t}) + \mu_i + \epsilon_{i,t}$. By properly instrumenting these interaction terms, we test the hypothesis that certain policies act as moderators, either accelerating or dampening the velocity of capital deepening, independent of their influence on the investment rate itself. This framework provides a clearer lens through which to understand how policy shapes not just an economy's destination, but also the speed of its journey.
+
+\end{document}
+                

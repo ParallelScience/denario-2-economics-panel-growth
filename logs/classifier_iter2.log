@@ -1,0 +1,7 @@
+Classifier: Step 1 — Determining archive...
+  Archive: econ — The paper focuses on growth economics, capital accumulation, and economic convergence, which are core topics within the field of economics.
+Classifier: Step 2 — Determining subcategory within 'econ'...
+  Primary: econ.EM
+  Secondary: econ.GN
+  Justification: The paper focuses on developing and applying a dynamic panel framework using System GMM estimators to quantify endogenous growth mechanisms and convergence dynamics, which is a core contribution to macro-econometrics.
+Classification completed in 0 min 2 sec. Cost: $0.0000

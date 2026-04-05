@@ -1,0 +1,58 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{natbib}
+\usepackage{graphicx} 
+
+
+\begin{document}
+
+Our empirical analysis proceeds in two stages, consistent with the methodology outlined. First, we establish the endogenous relationship between the investment rate and the level of economic development. Second, we analyze the dynamics of capital accumulation, focusing on the speed of convergence and the moderating role of specific policy variables.
+
+\subsection{Endogenous determination of the investment rate}
+To test the hypothesis that the investment rate is endogenously determined by the level of economic development, we estimated the relationship specified in Equation 3. The fixed-effects panel regression reveals a positive and statistically significant relationship between the logarithm of the investment rate and the logarithm of GDP per capita. The estimated elasticity ($\gamma_1$) is 0.049, with a p-value of 0.004.
+
+This finding provides strong evidence for an endogenous investment mechanism within our synthetic dataset. It supports the premise that as economies develop and per capita income rises, they tend to allocate a systematically larger fraction of their output towards investment. This result provides the empirical basis for calculating the income-conditioned steady-state capital stock, which is essential for the subsequent convergence analysis.
+
+\subsection{Convergence dynamics and policy moderation}
+Having established the endogenous nature of investment, we next investigate the dynamics of capital accumulation using the moderated transition model described in Equation 5. This model assesses the speed at which countries close the gap to their steady-state capital stock and how this speed is influenced by trade openness and government expenditure. The key results from this model are summarized in Table \ref{tab:moderation_results}.
+
+\begin{table}[h!]
+\centering
+\caption{Moderated Transition Model Results for Capital Growth ($\Delta \ln(K_{i,t})$)}
+\label{tab:moderation_results}
+\begin{tabular}{lcccc}
+\hline
+\hline
+Variable & Coef. & Std. Err. & z & P$>$$|$z$|$ \\
+\hline
+Distance to SS ($D_{i,t}$) & 0.348 & 0.015 & 23.16 & $<$0.001 \\
+$D_{i,t} \times$ Trade Openness & 0.022 & 0.013 & 1.74 & 0.082 \\
+$D_{i,t} \times$ Gov. Expend. & 0.016 & 0.015 & 1.06 & 0.289 \\
+\hline
+Observations & \multicolumn{4}{c}{1500} \\
+Adj. R-squared & \multicolumn{4}{c}{0.865} \\
+\hline
+\multicolumn{5}{l}{\footnotesize \textit{Note:} Results from the instrumental variable regression. }\\
+\multicolumn{5}{l}{\footnotesize Standard errors are clustered at the country level.}
+\end{tabular}
+\end{table}
+
+The model confirms a robust and rapid convergence process. The coefficient on the distance to steady-state ($D_{i,t}$) is 0.348 and is highly significant (p $<$ 0.001). This indicates a strong baseline tendency for capital deepening, where, on average, a country closes approximately 35\% of the logarithmic gap to its steady-state capital stock in a given period, holding policy variables at their mean.
+
+The primary focus of this stage is to identify policy moderators of this convergence speed. For trade openness, the interaction term ($D_{i,t} \times \text{Trade Openness}$) yields a positive coefficient of 0.022, which is statistically significant at the 10\% level (p = 0.082). This result suggests that greater trade openness acts as a marginal accelerator for capital deepening. In other words, economies that are more integrated into the global market converge to their steady-state capital stock at a faster rate than more closed economies.
+
+In contrast, the interaction term for the government expenditure share ($D_{i,t} \times \text{Gov. Expend.}$) is not statistically significant (coefficient = 0.016, p = 0.289). This finding implies that, within our modeling framework, the share of government spending in the economy does not have a discernible independent effect on the velocity of capital accumulation.
+
+These moderating effects are visualized in Figure \ref{fig:moderation_effects}, which plots the marginal effect of the distance to steady-state on capital growth at different levels of the policy variables (25th and 75th percentiles). The left panel clearly illustrates the accelerating effect of trade openness; the slope of the relationship between the convergence gap and capital growth is visibly steeper for countries with higher levels of trade openness. Conversely, the right panel shows nearly parallel lines for different levels of government expenditure, visually confirming the lack of a significant moderating effect found in our regression analysis. This graphical evidence reinforces the conclusion that while trade openness influences the speed of the journey to steady-state, government expenditure share does not appear to play a similar role in this synthetic data environment.
+
+\begin{figure*}[t]
+    \centering
+    \includegraphics[width=\textwidth]{../input_files/plots/step_2_transition_analysis_1_1775415741.png}
+    \caption{Marginal effect of the distance to steady-state on capital growth, conditional on the level of policy moderators. The left panel illustrates that the speed of convergence towards the steady-state increases at higher levels of trade openness (trade\_openness\_std), moving from the 25th to the 75th percentile. The right panel shows that the moderating effect of government expenditure share (government\_expenditure\_share\_std) is positive but less pronounced, which is consistent with its lack of statistical significance in the transition model.}
+    \label{fig:moderation_effects}
+\end{figure*}
+
+\end{document}
+                
