@@ -1,0 +1,40 @@
+{
+    "sub_tasks": [
+        {
+            "bullet_points": [
+                "Load the dataset and perform log-transformations on level variables.",
+                "Standardize policy variables (trade_openness, government_expenditure_share) and compute growth rates.",
+                "Conduct panel unit root tests to verify stationarity.",
+                "Generate a correlation matrix heatmap of primary variables (gdp, capital_stock, labor_force, human_capital, tfp) to identify potential multicollinearity.",
+                "Perform growth accounting decomposition to calculate TFP as the Solow residual using the structural parameter alpha = 0.35.",
+                "Visualize cross-country TFP dispersion and save the plot.",
+                "Save the processed dataset for subsequent steps."
+            ],
+            "sub_task": "Data Preprocessing, Growth Accounting, and Baseline Estimation",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Specify and estimate a dynamic panel model (System GMM) to quantify the endogenous investment elasticity with respect to lagged gdp_per_capita.",
+                "Estimate the transition speed equation for capital stock, including interaction terms between investment rate and policy moderators (trade_openness, government_expenditure_share).",
+                "Perform diagnostic tests (Hansen J-test, Arellano-Bond AR(2) test, Kleibergen-Paap F-statistic).",
+                "Output the System GMM estimation results (coefficients, standard errors, p-values) into a structured JSON/CSV file.",
+                "Generate a \"policy impact plot\" visualizing predicted capital stock growth trajectories under different scenarios (e.g., low vs. high trade openness).",
+                "Calculate the implied \"half-life\" of convergence and save all diagnostic statistics and simulation results to a summary file."
+            ],
+            "sub_task": "Dynamic Panel Estimation, Interaction Analysis, and Policy Simulation",
+            "sub_task_agent": "engineer"
+        },
+        {
+            "bullet_points": [
+                "Interpret the estimated endogenous investment elasticity and its implications for the structural feedback loop using the structured estimation results.",
+                "Discuss the role of trade_openness and government_expenditure_share as moderators of transition speed based on the interaction coefficients and the policy impact plot.",
+                "Perform a sensitivity analysis by comparing the estimated convergence rates against the theoretical steady-state dynamics implied by the structural model parameters (alpha=0.35, delta=0.07).",
+                "Synthesize the findings into a comprehensive Results section, referencing the diagnostic statistics, estimation tables, and simulation plots.",
+                "Provide a final assessment of how policy levers shift growth trajectories in the context of the Cobb-Douglas framework."
+            ],
+            "sub_task": "Synthesis, Sensitivity Analysis, and Results Interpretation",
+            "sub_task_agent": "researcher"
+        }
+    ]
+}
